@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "clickerMe",
+  "version": "1.0",
+  "author" : "Harry Wang",
+  "description": "An app that calculates clicker marks for UW CS students",
+    "icons": { 
+	"128": "clicker-128.png",
+	"16" : "clicker-16.png"
+	},
+	"content_scripts": [
+	{
+	"matches": ["https://www.student.cs.uwaterloo.ca/*"],
+	"js": [
+	"jquery.js",
+	"inject.js"
+	]
+  }
+  ]
+}
