@@ -10,3 +10,5 @@ Original Page
 ![before](before.png)
 With clickerMe Page
 ![after](after.png)
+
+Correct X more means to answer x more clicker questions correctly, you can get 100% in clicker marks
