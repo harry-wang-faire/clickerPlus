@@ -22,10 +22,10 @@ $(document).ready(function(){
 
     var calculate = function(a,u,c){
       if (u + a > 0){
-        return Math.round(100*(a + c)/((u + a) * correctGrade * topQuestions));
-	  }else{
-		return 0;
-	  }
+        return Math.round(100*(a + c) / ((u + a) * correctGrade * topQuestions)); 
+      }else{
+	return 0;
+      }
     }
     var count = 0;
     while(grade < 100){
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
     $("tr").each(function(index){
       if (index === 0){
-        $(this).append("<th> Correct% </th>" + "<th>Correct X More");
+        $(this).append("<th> Grade </th>" + "<th>Corrects to full mark");
 	  }else{
 	    $(this).append("<td align = 'center' >" + gradep + "</td>" + "<td align = 'center'>" + count + "</td>");
 	  }
