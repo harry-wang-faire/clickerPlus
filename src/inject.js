@@ -12,7 +12,7 @@ $(document).ready(function(){
     var unans =  parseInt(($unanswered.text()));
     var correctGrade = 2;
     var topQuestions = 0.75;
-    if (ans + unans > 0) {
+    if (ans + unans > 0){
         var grade = Math.round(100 * (ans + cor) / ((unans + ans) * correctGrade * topQuestions));
     }else{
         var grade = 0;
