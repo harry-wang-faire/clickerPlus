@@ -12,16 +12,20 @@ $(document).ready(function(){
     var unans =  parseInt(($unanswered.text()));
     var correctGrade = 2;
     var topQuestions = 0.75;
-    var grade = Math.round(100*(ans + cor)/((unans + ans) * correctGrade * topQuestions));
+    if (ans + unans > 0) {
+        var grade = Math.round(100 * (ans + cor) / ((unans + ans) * correctGrade * topQuestions));
+    }else{
+        var grade = 0;
+    }
     if (grade >= 100) grade = 100;
     gradep = grade + '%';
 
     var calculate = function(a,u,c){
       if (u + a > 0){
         return Math.round(100*(a + c)/((u + a) * correctGrade * topQuestions));
-      }else{
-        return 0;
-      }
+	  }else{
+		return 0;
+	  }
     }
     var count = 0;
     while(grade < 100){
@@ -32,9 +36,9 @@ $(document).ready(function(){
     $("tr").each(function(index){
       if (index === 0){
         $(this).append("<th> Correct% </th>" + "<th>Correct X More");
-      }else{
-	$(this).append("<td align = 'center' >" + gradep + "</td>" + "<td align = 'center'>" + count + "</td>");
-      }
-    });
+	  }else{
+	    $(this).append("<td align = 'center' >" + gradep + "</td>" + "<td align = 'center'>" + count + "</td>");
+	  }
+	});
   }
 });
